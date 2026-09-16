@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northstar Analytics | Demo Landing Page</title>
+  <meta
+    name="description"
+    content="A portfolio landing page built to practise GA4, Google Tag Manager, dataLayer events and web analytics."
+  />
+
+  <!--
+    STEP 1:
+    After you create your Google Tag Manager web container,
+    replace GTM-XXXXXXX with your real container ID.
+  -->
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Northstar Analytics</a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">GA4 + GTM PORTFOLIO PROJECT</p>
+          <h1>Turn website behaviour into useful marketing data.</h1>
+          <p class="lead">
+            This demo site exists to practise a real measurement workflow:
+            tracking plan, dataLayer events, Google Tag Manager, GA4 validation
+            and reporting.
+          </p>
+          <button
+            class="button primary js-cta"
+            data-cta-text="Book a measurement review"
+            data-cta-location="hero">
+            Book a measurement review
+          </button>
+        </div>
+
+        <aside class="card">
+          <p class="card-label">Project objective</p>
+          <h2>Measure the lead funnel</h2>
+          <p>Track which interactions move a visitor from interest to enquiry.</p>
+          <ul>
+            <li>CTA engagement</li>
+            <li>Service interest</li>
+            <li>Lead form submissions</li>
+            <li>Traffic source context</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <p class="eyebrow">SERVICES</p>
+        <h2>Choose an analytics service</h2>
+
+        <div class="cards">
+          <article class="service-card">
+            <h3>GA4 Measurement Audit</h3>
+            <p>Review event collection, naming, parameters and reporting readiness.</p>
+            <button
+              class="button secondary js-service"
+              data-service-name="GA4 Measurement Audit"
+              data-service-category="analytics_audit">
+              View service
+            </button>
+          </article>
+
+          <article class="service-card">
+            <h3>GTM Implementation</h3>
+            <p>Plan and implement clean, maintainable event tracking through GTM.</p>
+            <button
+              class="button secondary js-service"
+              data-service-name="GTM Implementation"
+              data-service-category="tagging">
+              View service
+            </button>
+          </article>
+
+          <article class="service-card">
+            <h3>Dashboard Reporting</h3>
+            <p>Turn collected data into simple reporting for marketing decisions.</p>
+            <button
+              class="button secondary js-service"
+              data-service-name="Dashboard Reporting"
+              data-service-category="reporting">
+              View service
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section muted">
+      <div class="container form-grid">
+        <div>
+          <p class="eyebrow">CONTACT</p>
+          <h2>Request a measurement review</h2>
+          <p>
+            Submitting this demo form triggers a <code>generate_lead</code>
+            event in the dataLayer. No personal information is sent to analytics.
+          </p>
+        </div>
+
+        <form id="lead-form" class="lead-form">
+          <label>
+            Name
+            <input name="name" type="text" required />
+          </label>
+
+          <label>
+            Work email
+            <input name="email" type="email" required />
+          </label>
+
+          <label>
+            Main interest
+            <select name="interest" id="interest" required>
+              <option value="">Choose one</option>
+              <option value="ga4_audit">GA4 audit</option>
+              <option value="gtm_implementation">GTM implementation</option>
+              <option value="reporting">Reporting</option>
+            </select>
+          </label>
+
+          <button class="button primary" type="submit">Send enquiry</button>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Portfolio demo for GA4, GTM and web analytics learning.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
